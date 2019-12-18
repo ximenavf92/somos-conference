@@ -1,0 +1,96 @@
+/* === Keyframes === */
+/* ----------------------------------------
+* animation slide-right -
+* ----------------------------------------*/
+ @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
+    }
+  }
+
+/* ----------------------------------------
+* animation slide-bottom
+* ----------------------------------------*/
+  @-webkit-keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+
+ /* ----------------------------------------
+  * animation slide-tr
+  * ----------------------------------------*/
+@-webkit-keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px) translateX(100px);
+              transform: translateY(-100px) translateX(100px);
+    }
+  }
+  @keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px) translateX(100px);
+              transform: translateY(-100px) translateX(100px);
+    }
+  }
+
+/* ----------------------------------------
+* animation slide-tl
+* ----------------------------------------*/
+@-webkit-keyframes slide-tl {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px) translateX(-100px);
+              transform: translateY(-100px) translateX(-100px);
+    }
+  }
+  @keyframes slide-tl {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px) translateX(-100px);
+              transform: translateY(-100px) translateX(-100px);
+    }
+  }  
