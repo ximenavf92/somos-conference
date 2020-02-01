@@ -171,7 +171,7 @@ html::-webkit-scrollbar-track {
     margin: 0 1em;;
     letter-spacing: .02em;
     text-align: center;
-    font-size: .95em;
+    font-size: 1em;
 }
 
 .ticket-button {
