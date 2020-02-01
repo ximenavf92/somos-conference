@@ -128,7 +128,8 @@ html::-webkit-scrollbar-track {
     grid-area: 1 / 3 / 2 / 5;
     width: 60%;
     justify-self: center;
-    align-self: center;
+    align-self: start;
+    margin-top: 30px;
 }
 
 .logo-heading {
@@ -156,6 +157,72 @@ html::-webkit-scrollbar-track {
     }
 }
 
+.buy-tickets-1 {
+    background-color: var(--mainColor);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    color: var(--backgroundColor);
+}
+
+.buy-tickets-1 h2 {
+    margin: 0 1em;;
+    letter-spacing: .02em;
+    text-align: center;
+}
+
+.ticket-button {
+    color: var(--backgroundColor);
+    text-decoration: none;
+    border: solid 1.5px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 0 20px 0 0;
+    text-transform: uppercase;
+    letter-spacing: .035em;
+    text-align: center;
+}
+
+.member-tickets {
+    border-color: var(--color3);
+}
+
+.non-member-tickets {
+    border-color: var(--color4);
+}
+
+.member-tickets:hover {
+    background-color: var(--color3);
+}
+
+.non-member-tickets:hover {
+    background-color: var(--color4);
+}
+
+@media (max-width: 730px) {
+    .buy-tickets-1 {
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    .buy-tickets-1--buttons {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .buy-tickets-1 h2 {
+        margin-bottom: 20px;
+    }
+    
+    .ticket-button {
+        margin: 0 auto;
+        margin-top: 15px;
+        text-align: center;
+}
+}
+
 .mission-text {
     grid-area: 3/ 5 / 3 / 8;
     font-size: 20px;
@@ -167,6 +234,7 @@ html::-webkit-scrollbar-track {
     justify-self: center;
     align-self: center;
     padding: 0 50px 0;
+    z-index: 9;
 }
 
 .mission-text--blob {
@@ -351,9 +419,10 @@ html::-webkit-scrollbar-track {
 }
 
 .date-heading {
-    grid-area: 4 / 1 / 5 / 9;
+    grid-area: 3 / 1 / 5 / 9;
     padding-left: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 5%;
+    text-shadow: 1px 1px 1px rgb(254, 249, 226, .8); 
 }
 
 }
