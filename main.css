@@ -75,7 +75,7 @@ html::-webkit-scrollbar-track {
     grid-template-rows: repeat(3, 1fr);
     grid-template-rows: 25% 5% 40% 5% 25%;
     gap: 20px;
-    height: 100vh;
+    height: 1000px;
     object-fit: contain;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -171,7 +171,7 @@ html::-webkit-scrollbar-track {
     margin: 0 1em;;
     letter-spacing: .02em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.25em;
 }
 
 .ticket-button {
@@ -252,18 +252,27 @@ html::-webkit-scrollbar-track {
     font-size: 3em;
     font-size: calc(24px + (70 - 24) * ((100vw - 320px) / (1920 - 320)));
     font-family: var(--main-font);
-    font-weight: black;
+    font-weight: bold;
     line-height: 1.5em;
     color: var(--color1);
     padding: 0;
     margin: 0;
     margin-bottom: -8px;
-    margin-top: -5%;
+    margin-top: -4%;
     text-align: center;
     justify-self: start;
     padding-left: 3%;
-    align-self: center;
     z-index: 10;
+}
+
+.time-venue-header {
+    grid-area: 5 / 3 / 6 / 8;
+    font-size: calc(20px + (42 - 20) * ((100vw - 320px) / (1920 - 320)));
+    font-family: var(--main-font);
+    font-weight: bold;
+    line-height: 1.5em;
+    color: var(--color4);
+    text-align: center;
 }
 
 /* === Responsive === */
@@ -351,6 +360,15 @@ html::-webkit-scrollbar-track {
 .date-heading {
     grid-area: 4 / 3 / 5 / 8;
 }
+
+.time-venue-header {
+    grid-area: 4 / 3 / 5 / 8;
+    width: 50%;
+    line-height: 1.2em;
+    margin-top: 8%;
+    margin-left: -5%;
+    justify-self: center;
+}
 }
 
 
@@ -359,7 +377,8 @@ html::-webkit-scrollbar-track {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 25% 25% 25% 25%;
     gap: 20px;
-    height: 100vh;
+    height: 650px;
+    padding-bottom: 10%;
     /* height: height: calc(var(--vh, 1vh) * 100); */
         
    /* variables */
@@ -420,9 +439,17 @@ html::-webkit-scrollbar-track {
 }
 
 .date-heading {
-    grid-area: 3 / 1 / 5 / 9;
+    grid-area: 4 / 1 / 5 / 9;
     padding-left: 25px;
     margin-bottom: 5%;
+    text-shadow: 1px 1px 1px rgb(254, 249, 226, .8); 
+}
+
+.time-venue-header {
+    grid-area: 4 / 3 / 5 / 8;
+    width: 80%; 
+    margin-top: 12%;
+    margin-left: -10%;
     text-shadow: 1px 1px 1px rgb(254, 249, 226, .8); 
 }
 
