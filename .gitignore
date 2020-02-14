@@ -1,4 +1,9 @@
-_DS_Store
 # Local Netlify folder
 .netlify
+
+# Mac Files
 .DS_Store
+_DS_Store
+
+# NPM
+node_modules
