@@ -366,7 +366,7 @@ main {
 
 /* === Responsive === */
 @media (max-width: 1400px) {
-    .main-header {
+    .home-header {
         /*variables*/
     --top-shapes-shift-tl: -50px;
     --top-shapes-shift-tr: -140px;
@@ -374,7 +374,7 @@ main {
 }
 
 @media (max-width: 1110px) {
-    .main-header {
+    .home-header {
         /*variables*/
     --top-shapes-shift-tr: -70px;
     }
@@ -388,7 +388,7 @@ main {
 }
 
 @media (max-width: 1000px) {
-    .main-header {
+    .home-header {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 25% 25% 25% 25%;
     gap: 20px;
@@ -462,7 +462,7 @@ main {
 
 
 @media (max-width: 768px) {
-    .main-header {
+    .home-header {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 25% 25% 25% 25%;
     gap: 20px;
