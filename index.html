@@ -16,20 +16,32 @@
     <title>¡somos! Conference</title>
     <link rel="stylesheet" href="https://use.typekit.net/xms0jpr.css">
     <link rel="shortcut icon" href="assets/favicon2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <header class="buy-tickets-1">
-        <h2>Get your Early Bird Tickets Now!</h2>
-        <div class="buy-tickets-1--buttons">
-            <a href="https://fontevacustomer-1638354c123-1641d839835.force.com/services/oauth2/authorize?client_id=3MVG9nthuDc9owbcOq7_07W.HriOQQPWTbMkrpOla.ajDQlTHf4_uby_mhwylcX.mJBU2O2SppTiZMS0J_HJd&response_type=code&redirect_uri=https://ikit.aiga.org/ikit_national_util/ikit-national-util-sso-redirect/&state=https%3A%2F%2Fsanantonio.aiga.org%2Fevent%2Fsomos-conference%2F%3Fredirect_source%3Deventbrite_register" class="ticket-button member-tickets" target="_blank">Member</a>
-            <a href="https://www.eventbrite.com/e/somos-conference-tickets-90785809801" class="ticket-button non-member-tickets" target="_blank">Non-Member</a>
+    <a class="skip-main" href="#main">Skip to Main Content</a>
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <!-- <li><a href="#contact">Contact</a></li> -->
+            </ul>
+        </nav>
+        <div class="buy-tickets--buttons">
+            <h2>Get your Early Bird Tickets Now!</h2>
+            <a href="https://fontevacustomer-1638354c123-1641d839835.force.com/services/oauth2/authorize?client_id=3MVG9nthuDc9owbcOq7_07W.HriOQQPWTbMkrpOla.ajDQlTHf4_uby_mhwylcX.mJBU2O2SppTiZMS0J_HJd&response_type=code&redirect_uri=https://ikit.aiga.org/ikit_national_util/ikit-national-util-sso-redirect/&state=https%3A%2F%2Fsanantonio.aiga.org%2Fevent%2Fsomos-conference%2F%3Fredirect_source%3Deventbrite_register" class="button ticket-button member-tickets" target="_blank">Member</a>
+            <a href="https://www.eventbrite.com/e/somos-conference-tickets-90785809801" class="button ticket-button non-member-tickets" target="_blank">Non-Member</a>
         </div> 
     </header>
-    <main> 
-        <section class="splash-header">
+    <main id="main"> 
+        <!-- Home Header -->
+        <section class="home-header">
             <div class="shape-purple--top-left">
                 <img src="assets/shape-purple-top-left.svg" alt="">
             </div>
@@ -42,6 +54,7 @@
                 </a>
             </h1>
             <h2 class="logo-heading">
+                <span class="sr-only">¡somos! Conference</span>
                 <!-- <img src="assets/somos-logo-2.svg" alt="¡somos! Conference"> -->
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 900 360" style="enable-background:new 0 0 900 360;" xml:space="preserve">
@@ -133,12 +146,9 @@
 
             </h2>
             <p class="mission-text">
-                A one day conference that celebrates the Hispanic heritage of San Antonio’s creatives. Our mission is to
-                enlighten and empower through the inclusion of all creatives while cultivating new voices within our
-                community.
+                A one day conference that celebrates the Hispanic heritage of San Antonio’s creatives. Our mission is to enlighten and empower through the inclusion of all creatives while cultivating new voices within our community.
             </p>
             <div class="mission-text--blob"><img src="assets/shape-text-blob1.svg" alt=""></div>
-
            
             </div>
             <h2 class="date-heading">
@@ -153,9 +163,149 @@
             <div class="shape-pink--bottom-right">
                 <img src="assets/shape-pink-bottom-right.svg" alt="">
             </div>
-        </section>
-    </main>
-    
+        </section><!-- End Home Header-->
+
+        <!-- A About Section -->
+        <section id="about" class="about-section">
+            <h2>Creativty Thrives in Community</h2>
+            <p>The San Antonio chapter of AIGA–the professional association for design–believes that creativity thrives in community. In line with this belief, and acknowledging San Antonio’s culture, we present ¡SOMOS!​, a conference celebrating the Hispanic heritage of the city’s creatives.</p>
+            <ul class="about--highlights-list">
+                <li>Local & International Speakers</li>
+                <li>Silent Auction</li>
+                <li>Giveaways</li>
+                <li>After Party</li>
+            </ul>
+            <div class="about--topics-section">
+                <h3>Topics</h3>
+                <ul class="about--topics-list">
+                    <li>Cross-border Design</li>
+                    <li>Design for Impact</li>
+                    <li>Self-care for Creatives</li>
+                    <li>and more</li>
+                </ul>
+            </div>
+                <img src="assets/contrastes1.jpg" alt="Conference attendees smiling while talking to one of the speakers" class="about--image1">
+                <img src="assets/contrastes2.jpg" alt="Rolando Murillo & Cesar Rivera on stage talking about AIGA" class="about--image2">
+            
+        </section><!-- End About Section-->
+        
+        <!-- Speakers Section -->
+        <section id="speakers" class="speakers-section">
+            <h2 class="special-heading speakers--special-heading">Speakers</h2>
+            <div class="speakers--grid">
+                <article class="speakers--grid-card">
+                    <figure class="speakers--grid-card-headshot">
+                        <img src="" alt="">
+                    </figure>
+                    <h3 class="speakers--grid-name">Doris <br>Palmeros</h3>
+                    <ul class="speakers--grid-info">
+                        <li class="speakers--grid-info-title">Professor</li>
+                        <li class="speakers--grid-info-organization">University of the Incarnate Word</li>
+                    </ul>
+                    <ul class="speakers--grid-social">
+                        <li><a href="#" target="_blank"><img src="assets/instagram-icon-blue.svg" alt="Instagram Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/linkedin-icon-blue.svg" alt="Linked In profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/twitter-icon-blue.svg" alt="Twitter Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/web-icon-blue.svg" alt="Visit Website"></a></li>
+                    </ul>
+                    <a href="" class="button speakers--grid-bio-btn">About Doris</a>
+                </article>
+
+                <article class="speakers--grid-card">
+                    <figure class="speakers--grid-card-headshot">
+                        <img src="" alt="">
+                    </figure>
+                    <h3 class="speakers--grid-name">Doris <br>Palmeros</h3>
+                    <ul class="speakers--grid-info">
+                        <li class="speakers--grid-info-title">Professor</li>
+                        <li class="speakers--grid-info-organization">University of the Incarnate Word</li>
+                    </ul>
+                    <ul class="speakers--grid-social">
+                        <li><a href="#" target="_blank"><img src="assets/instagram-icon-blue.svg" alt="Instagram Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/linkedin-icon-blue.svg" alt="Linked In profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/twitter-icon-blue.svg" alt="Twitter Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/web-icon-blue.svg" alt="Visit Website"></a></li>
+                    </ul>
+                    <a href="" class="button speakers--grid-bio-btn">About Doris</a>
+                </article>
+
+                <article class="speakers--grid-card">
+                    <figure class="speakers--grid-card-headshot">
+                        <img src="" alt="">
+                    </figure>
+                    <h3 class="speakers--grid-name">Doris <br>Palmeros</h3>
+                    <ul class="speakers--grid-info">
+                        <li class="speakers--grid-info-title">Professor</li>
+                        <li class="speakers--grid-info-organization">University of the Incarnate Word</li>
+                    </ul>
+                    <ul class="speakers--grid-social">
+                        <li><a href="#" target="_blank"><img src="assets/instagram-icon-blue.svg" alt="Instagram Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/linkedin-icon-blue.svg" alt="Linked In profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/twitter-icon-blue.svg" alt="Twitter Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/web-icon-blue.svg" alt="Visit Website"></a></li>
+                    </ul>
+                    <a href="" class="button speakers--grid-bio-btn">About Doris</a>
+                </article>
+
+                <article class="speakers--grid-card">
+                    <figure class="speakers--grid-card-headshot">
+                        <img src="" alt="">
+                    </figure>
+                    <h3 class="speakers--grid-name">Doris <br>Palmeros</h3>
+                    <ul class="speakers--grid-info">
+                        <li class="speakers--grid-info-title">Professor</li>
+                        <li class="speakers--grid-info-organization">University of the Incarnate Word</li>
+                    </ul>
+                    <ul class="speakers--grid-social">
+                        <li><a href="#" target="_blank"><img src="assets/instagram-icon-blue.svg" alt="Instagram Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/linkedin-icon-blue.svg" alt="Linked In profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/twitter-icon-blue.svg" alt="Twitter Profile"></a></li>
+                        <li><a href="#" target="_blank"><img src="assets/web-icon-blue.svg" alt="Visit Website"></a></li>
+                    </ul>
+                    <a href="" class="button speakers--grid-bio-btn">About Doris</a>
+                </article>
+            </div>
+        </section><!-- End Speakers Section-->
+
+        <!-- Sponsors Section -->
+        <section id="sponsors" class="sponsors--section">
+            <h2 class="special-heading sponsors--special-heading">Sponsors</h2>
+            <ul class="sponsors--list">
+                <li class="sponsors--list-logo"><a href="https://new.trinity.edu/"><img src="assets/sponsors/trinity-logo.png" alt="Trinity University"></a></li class="sponsors--list-logo">
+                <li class="sponsors--list-logo"><a href="http://promoplace.com/thewatermarkgroup"><img src="assets/sponsors/watermark-logo.png" alt="The Watermark Group"></a></li>
+                <li class="sponsors--list-logo"><a href="https://www.stickermule.com/"><img src="assets/sponsors/sticker-mule-logo.svg" alt="Sticker Mule"></a></li>
+                <li class="sponsors--list-logo"><a href="http://dorcolspirits.com/"><img src="assets/sponsors/dorcol-logo1.png" alt="Dorćol"></a></li>
+                <!-- <li class="become-sponsor"><a href="#">Your Logo <strong>Here</strong></a></li> -->
+                <li><a href="#"><img src="assets/sponsors/become-sponsor-1.svg" alt="Become a Sponsor"></a></li>
+            </ul>
+        </section><!-- End Speakers Section-->
+        
+    </main><!-- End Main Section -->
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="assets/contrastes3.jpg" alt="Speakers group photo of 2019 conference" class="footer--image1">
+            <img src="assets/contrastes4.jpg" alt="Rolando Murillo & Cesar Rivera on stage talking about AIGA" class="footer--image2">
+        <div class="buy-tickets--buttons">
+            <h2>Get your Early Bird Tickets Now!</h2>
+            <a href="https://fontevacustomer-1638354c123-1641d839835.force.com/services/oauth2/authorize?client_id=3MVG9nthuDc9owbcOq7_07W.HriOQQPWTbMkrpOla.ajDQlTHf4_uby_mhwylcX.mJBU2O2SppTiZMS0J_HJd&response_type=code&redirect_uri=https://ikit.aiga.org/ikit_national_util/ikit-national-util-sso-redirect/&state=https%3A%2F%2Fsanantonio.aiga.org%2Fevent%2Fsomos-conference%2F%3Fredirect_source%3Deventbrite_register" class="button ticket-button member-tickets" target="_blank">Member</a>
+            <a href="https://www.eventbrite.com/e/somos-conference-tickets-90785809801" class="button ticket-button non-member-tickets" target="_blank">Non-Member</a>
+        </div> 
+        <div class="footer--social-icons">
+            <li><a href=""><img src="assets/facebook-icon-white.svg" alt="Follow AIGA on Facebook"></a></li>
+            <li><a href=""><img src="assets/instagram-icon-white.svg" alt="Follow AIGA on Instagram"></a></li>
+            <li><a href=""><img src="assets/linkedin-icon-white.svg" alt="Follow AIGA on Linked In"></a></li>
+            <li><a href=""><img src="assets/twitter-icon-white.svg" alt="Follow AIGA on Twitter"></a></li>
+        </div>
+        <div class="copyright-credits">
+            <p>&copy; 2020 ¡somos! Conference | Presented by <a href="https://sanantonio.aiga.org/" target="_blank">AIGA
+                    San Antonio</a>.<br>
+                <a href="https://github.com/ximenavf92/somos-conference" target="_blank"><img
+                        src="assets/github-icon-white.svg" alt="View code on Github" class="github-repo"></a> 
+                        <!-- Built with <a href="https://www.11ty.dev/" target="_blank">Eleventy</a>.  -->
+                        Hosted on <a
+                        href="https://www.netlify.com/" target="_blank">Netlify</a>.</p>
+        </div>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>
