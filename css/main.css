@@ -58,6 +58,8 @@ li {
     margin: 0;
     padding: 0;
     list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 p {
@@ -102,17 +104,18 @@ html::-webkit-scrollbar-track {
   
 /* === Base Styles === */
 :hover {
-    transition: ease-in-out .3s;
+    transition: ease-in-out .4s;
 }
 .button {
     text-decoration: none;
     border: solid 1.5px;
     border-radius: 10px;
-    padding: 5px 20px;
+    padding: 5px 18px;
     text-transform: uppercase;
     letter-spacing: .035em;
     text-align: center;
     min-height: 2em;
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .special-heading {
@@ -135,8 +138,9 @@ html::-webkit-scrollbar-track {
 @media (max-width: 768px) {
     .special-heading {
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
         margin-top: 1em;
+        margin-left: .5em;
     }
 
     .special-heading::before {
@@ -169,13 +173,13 @@ html::-webkit-scrollbar-track {
     margin: 0 1em;;
     letter-spacing: .02em;
     text-align: center;
-    font-size: 1.25em;
+    font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1920 - 320)));
     align-self: center;
 }
 
 .main-nav ul {
     display: flex;
-    /* list-style: none; */
+    list-style: none;
     width: 100%;
     justify-content: flex-start;
     margin: 1em 0;
@@ -208,6 +212,10 @@ html::-webkit-scrollbar-track {
     color: var(--backgroundColor);
     margin: 0 10px 0 10px;
     align-self: center;
+}
+
+.ticket-button:hover {
+    transform: scale(1.05);
 }
 
 .member-tickets {
@@ -254,6 +262,57 @@ html::-webkit-scrollbar-track {
     .main-nav {
         display: none;
     }
+
+    .mobile-nav {
+        display: block;
+        background:var(--mainColor);
+        padding: 1.5em 0;
+        width: 100%;
+        position: fixed;
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+        padding-right: 10px;
+        border-top: 5px solid var(--color2);
+    }
+
+    .mobile-nav ul {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        margin: 0 .5em;
+    }
+    
+    .mobile-nav ul li {
+        margin: 0 .65em;
+        text-transform: uppercase;
+        letter-spacing: .045em;
+        text-align: center;
+    }
+    
+    .mobile-nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+
+    }
+    
+    .mobile-nav ul li a:hover {
+        color: var(--color4);
+        font-size: 1.05em;
+        transform-origin: center;
+        transition: ease-in-out .3s;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-header h2 {
+        font-size: 22px;
+    }
+
+    .ticket-button {
+        margin: 1.5em .2em 0;
+    }
 }
 /* === Main === */
 main {
@@ -269,14 +328,10 @@ main {
     height: calc(100vh - 100px);
     z-index: 10;
     min-height: 800px;
-    /* object-fit: contain;
-    background-image: url(../assets/shapes-bkd-desk-1.svg);
-    background-repeat: no-repeat;
-    background-size: cover; */
 
-    /*variables*/
+    /* shape positioning variables */
     --top-shapes-shift-tl: -200px;
-    --top-shapes-shift-tr: -260px;
+    --top-shapes-shift-tr: -280px;
     --bottom-shapes-shift-bl: -15px;
     --bottom-shapes-shift-br: -15px;
 }
@@ -363,8 +418,8 @@ main {
 }
 
 .date-heading {
-    grid-area: 5 / 3 / 6 / 7;
-    font-size: calc(24px + (70 - 24) * ((100vw - 320px) / (1920 - 320)));
+    grid-area: 5 / 2 / 6 / 8;
+    font-size: calc(24px + (68 - 24) * ((100vw - 320px) / (1920 - 320)));
     font-family: var(--main-font);
     font-weight: bold;
     line-height: 1.5em;
@@ -375,12 +430,12 @@ main {
     margin-top: -4%;
     text-align: center;
     justify-self: center;
-    padding-left: 3%;
+    /* padding-left: 3%; */
     z-index: 5;
 }
 
 .time-venue-header {
-    grid-area: 5 / 3 / 6 / 7;
+    grid-area: 5 / 2 / 6 / 8;
     font-size: calc(20px + (42 - 20) * ((100vw - 320px) / (1920 - 320)));
     font-family: var(--main-font);
     font-weight: bold;
@@ -574,10 +629,11 @@ main {
     text-align: center;
     align-self: start;
     margin-top: -20px;
-    width: 35ch;
+    width: 38ch;
 }
 
 .mission-text--blob {
+    display: none;
     grid-area: 3 / 2 / 3 / 8;
     width: 620px;
 }
@@ -914,7 +970,7 @@ main {
 
 @media (max-width: 768px) {
     .speakers--grid {
-        margin: 6em 2em 12em;
+        margin: 5em 2em 12em;
         gap: 100px 0;
     }
 
@@ -968,7 +1024,7 @@ main {
 
 .sponsors--special-heading {
     color: var(--color3);
-    margin: .75em 1.2em .75em 0;
+    margin: .75em 0 .75em 0;
 }
 
 .sponsors--list {
@@ -987,6 +1043,11 @@ main {
 .sponsors--list li:nth-child(4) img {
     width: 200px;
 }
+
+.sponsors--list img:hover {
+    transform: scale(1.1);
+}
+
 
 .become-sponsor  {
     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
@@ -1092,7 +1153,12 @@ main {
 }
 
 .footer .buy-tickets--buttons h2 {
-    font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
+    font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
+    width: 100%;
+}
+
+.footer .ticket-button:hover {
+    transform: scale(1.05);
 }
 
 .footer--social-icons {
@@ -1121,6 +1187,7 @@ main {
     grid-area: 3 / 2 / 4 / 12;
     justify-self: center;
     font-size: 14px;
+    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (2000 - 320)));
     letter-spacing: .025em;
 }
 
@@ -1143,6 +1210,10 @@ main {
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding-bottom: 80px;;
+    }
+
     .footer--image1 {
         grid-area: 1 / 2 / 2 / 7;
     }
