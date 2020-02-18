@@ -9,4 +9,4 @@ _DS_Store
 node_modules
 
 # Eleventy
-_site
+_site/
