@@ -7,3 +7,6 @@ _DS_Store
 
 # NPM
 node_modules
+
+# Eleventy
+_site
