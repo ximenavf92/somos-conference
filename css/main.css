@@ -1,5 +1,18 @@
 /* === ¡somos! conference 2020 === */
 
+/* === Temp Styles === */
+.speakers--grid-bio-btn {
+    display: none;
+}
+
+.is-visible {
+    display: block;
+}
+
+.is-hidden {
+    display: none;
+}
+
 /* ==== Variables ==== */
 :root {
     --backgroundColor: #FEF9E2;
@@ -12,6 +25,12 @@
 }
 
 /* ==== Basics ==== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* TODO: Improve A11y for focus, Jquery? Vanilla solution? */
+
 *,
 *::before,
 *::after {
@@ -21,26 +40,27 @@
 
 /* === Skip To Main Content === */
 a.skip-main {
-  left:-999px;
-  position:absolute;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  z-index:-999;
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
 }
 
-a.skip-main:focus, a.skip-main:active {
-  color: #fff;
-  background-color:#000;
-  left: auto;
-  top: auto;
-  width: 20%;
-  height: auto;
-  overflow:auto;
-  margin: 10px 35%;
-  padding:10px 5px;
-  z-index:999;
+a.skip-main:focus,
+a.skip-main:active {
+    color: #fff;
+    background-color: #000;
+    left: auto;
+    top: auto;
+    width: 20%;
+    height: auto;
+    overflow: auto;
+    margin: 10px 35%;
+    padding: 10px 5px;
+    z-index: 999;
 }
 
 body {
@@ -97,15 +117,16 @@ html::-webkit-scrollbar-track {
     background: linear-gradient(to right, #201c29, #201c29 1px, #100e17 1px, #100e17);
     background: var(--backgroundColor);
     background: var(--mainColor);
-    box-shadow: inset 1px 1px 5px rgba(40, 43, 73,.3);
+    box-shadow: inset 1px 1px 5px rgba(40, 43, 73, .3);
     /* box-shadow: inset 1px 1px 4px rgba(254, 249, 226,.8); */
     /* background: var(--backgroundColor); */
 }
-  
+
 /* === Base Styles === */
 :hover {
     transition: ease-in-out .4s;
 }
+
 .button {
     text-decoration: none;
     border: solid 1.5px;
@@ -152,10 +173,12 @@ html::-webkit-scrollbar-track {
 }
 
 /* === Header/Nav/Tickets === */
-.mobile-nav {display: none;}
+.mobile-nav {
+    display: none;
+}
 
 .main-header {
-    display:grid;
+    display: grid;
     /* grid-template-columns:repeat(2, 1fr); */
     grid-template-columns: 3fr 5fr;
     background-color: var(--mainColor);
@@ -170,7 +193,8 @@ html::-webkit-scrollbar-track {
 }
 
 .main-header h2 {
-    margin: 0 1em;;
+    margin: 0 1em;
+    ;
     letter-spacing: .02em;
     text-align: center;
     font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -182,7 +206,8 @@ html::-webkit-scrollbar-track {
     list-style: none;
     width: 100%;
     justify-content: flex-start;
-    margin: 1em 0;
+    align-items: center;
+    margin: .2em 0;
 }
 
 .main-nav ul li {
@@ -203,7 +228,21 @@ html::-webkit-scrollbar-track {
     transition: ease-in-out .3s;
 }
 
-.buy-tickets--buttons{
+.main-nav--logo {
+    display: block;
+    width: 150px;
+    height: 100%;
+    transform-origin: center;
+    transition: ease-in-out 1s .2s;
+}
+
+.main-nav--logo:hover {
+    transform: rotate(180deg);
+    transition: ease-in-out 1s .2s;
+}
+
+
+.buy-tickets--buttons {
     display: flex;
     justify-content: flex-end;
 }
@@ -252,11 +291,19 @@ html::-webkit-scrollbar-track {
     .buy-tickets--buttons h2 {
         margin-bottom: 20px;
     }
-    
+
     .ticket-button {
         margin: 0 auto;
         margin: 1.5em .5em 0;
         text-align: center;
+    }
+
+    html:not([data-scroll='0']) .mobile-nav {
+        display: none;
+    }
+
+    html:not([data-scroll='0']) .mobile-nav {
+        display: block;
     }
 
     .main-nav {
@@ -264,8 +311,8 @@ html::-webkit-scrollbar-track {
     }
 
     .mobile-nav {
-        display: block;
-        background:var(--mainColor);
+        /* display: block; */
+        background: var(--mainColor);
         padding: 1.5em 0;
         width: 100%;
         position: fixed;
@@ -276,6 +323,11 @@ html::-webkit-scrollbar-track {
         border-top: 5px solid var(--color2);
     }
 
+    .somos-logo--mobile-nav {
+        width: 250px;
+        margin: -3em auto .75em;
+    }
+
     .mobile-nav ul {
         display: flex;
         list-style: none;
@@ -283,20 +335,20 @@ html::-webkit-scrollbar-track {
         justify-content: center;
         margin: 0 .5em;
     }
-    
+
     .mobile-nav ul li {
         margin: 0 .65em;
         text-transform: uppercase;
         letter-spacing: .045em;
         text-align: center;
     }
-    
+
     .mobile-nav ul li a {
         text-decoration: none;
         color: #ffffff;
-
+        bottom: .5em;
     }
-    
+
     .mobile-nav ul li a:hover {
         color: var(--color4);
         font-size: 1.05em;
@@ -314,6 +366,7 @@ html::-webkit-scrollbar-track {
         margin: 1.5em .2em 0;
     }
 }
+
 /* === Main === */
 main {
     top: 70px;
@@ -449,17 +502,17 @@ main {
 @media (max-width: 1400px) {
     .home-header {
         /*variables*/
-    --top-shapes-shift-tl: -50px;
-    --top-shapes-shift-tr: -120px;
+        --top-shapes-shift-tl: -50px;
+        --top-shapes-shift-tr: -120px;
     }
 }
 
 @media (max-width: 1110px) {
     .home-header {
         /*variables*/
-    --top-shapes-shift-tr: -90px;
+        --top-shapes-shift-tr: -90px;
     }
-    
+
     .shape-purple--top-left {
         grid-area: 1 / 1 / 2 / 3;
         top: var(--top-shapes-shift-tl);
@@ -470,75 +523,90 @@ main {
 
 @media (max-width: 1000px) {
     .home-header {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 25% 25% 25% 25%;
-    gap: 20px;
-    height: 100vh;
-        
-   /* variables */
-    --top-shapes-shift-tl: -80px;
-    --top-shapes-shift-tr: -140px;
-    --bottom-shapes-shift-bl: -15px;
-    --bottom-shapes-shift-br: 150px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 25% 25% 25% 25%;
+        gap: 20px;
+        height: 100vh;
+
+        /* variables */
+        --top-shapes-shift-tl: -80px;
+        --top-shapes-shift-tr: -140px;
+        --bottom-shapes-shift-bl: -15px;
+        --bottom-shapes-shift-br: 150px;
+    }
+
+    .shape-purple--top-left {
+        grid-area: 1 / 1 / 2 / 3;
+        width: 150%;
+        left: -35%;
+    }
+
+    .shape-blue--top-right {
+        grid-area: 1 / 5 / 2 / 9;
+        right: -25%;
+    }
+
+    .shape-yellow--bottom-left {
+        grid-area: 4 / 1 / 4 / 4;
+        left: -8%;
+    }
+
+    .shape-pink--bottom-right {
+        grid-area: 4 / 6 / 4 / 9;
+        right: -5%;
+    }
+
+    .aiga-heading {
+        grid-area: 1 / 3 / 2 / 5;
+        width: 60%;
+        justify-self: right;
+        align-self: end;
+    }
+
+    .logo-heading {
+        grid-area: 2 / 2 / 3 / 8;
+        align-self: start;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+
+    .mission-text {
+        grid-area: 3 / 3 / 3 / 7;
+        padding: 0 0 0 5px;
+    }
+
+    .mission-text--blob {
+        grid-area: 3 / 3 / 3 / 7;
+        justify-self: center;
+        align-self: center;
+        display: block;
+        width: 680px;
+    }
 }
 
-.shape-purple--top-left {
-    grid-area: 1 / 1 / 2 / 3;
-    width: 150%;
-    left: -35%;
-}
+/* .mission-text {
+    grid-area: 3/ 3 / 3 / 8;
+  }
 
-.shape-blue--top-right {
-    grid-area: 1 / 5 / 2 / 9;
-    right: -25%;
-}
-
-.shape-yellow--bottom-left {
-    grid-area: 4 / 1 / 4 / 4;
-    left: -8%;
-}
-
-.shape-pink--bottom-right {
-    grid-area: 4 / 6 / 4 / 9;
-    right: -5%;
-}
-
-.aiga-heading {
-    grid-area: 1 / 3 / 2 / 5;
-    width: 90%;
-    justify-self: right;
-}
-
-.logo-heading {
-    grid-area: 2 / 2 / 3 / 8;
-    align-self: start;
-}
-
-.mission-text {
-    grid-area: 3 / 3 / 3 / 7;
-    padding: 0 0 0 5px;
-}
-
-.mission-text--blob {
-    grid-area: 3 / 3 / 3 / 7;
-    justify-self: center;
-    align-self: center;
-    display: block;
-    width: 680px;
-}
+  .mission-text--blob {
+    grid-area: 3 / 2 / 4 / 9;
+  } */
 
 .date-heading {
-    grid-area: 4 / 3 / 5 / 8;
+    grid-area: 5 / 2 / 5 / 8;
+    /* grid-area: 5 / 2 / 6 / 8; */
 }
 
 .time-venue-header {
-    grid-area: 4 / 3 / 5 / 8;
-    width: 50%;
+    grid-area: 5 / 2 / 6 / 8;
+    /* grid-area: 4 / 3 / 5 / 8; */
+    /* width: 50%; */
     line-height: 1.2em;
-    margin-top: 8%;
-    margin-left: -5%;
+    /* margin-top: 8%; */
+    /* margin-left: -5%; */
     justify-self: center;
-}
+    align-self: start;
 }
 
 @media (max-width: 1080px) {
@@ -554,7 +622,7 @@ main {
         text-align: center;
         margin-top: .5em;
     }
-    
+
     .main-nav {
         grid-area: 2 / 1 / 3 / 2;
     }
@@ -572,86 +640,87 @@ main {
     }
 
     .home-header {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 25% 25% 25% 25%;
-    gap: 20px;
-    min-height: 500px;
-    padding-bottom: 10%;
-    /* height: height: calc(var(--vh, 1vh) * 100); */
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 25% 25% 25% 25%;
+        gap: 20px;
+        min-height: 500px;
+        padding-bottom: 10%;
+        /* height: height: calc(var(--vh, 1vh) * 100); */
 
-   /* variables */
-    --top-shapes-shift-tl: 5px;
-    --top-shapes-shift-tr: -80px;
-    --bottom-shapes-shift-bl: 30px;
-    --bottom-shapes-shift-br: 140px;
-}
+        /* variables */
+        --top-shapes-shift-tl: 5px;
+        --top-shapes-shift-tr: -80px;
+        --bottom-shapes-shift-bl: 30px;
+        --bottom-shapes-shift-br: 140px;
+    }
 
-.shape-purple--top-left {
-    grid-area: 1 / 1 / 4 / 3;
-    width: 250%;
-    left: -100%;
-}
+    .shape-purple--top-left {
+        grid-area: 1 / 1 / 4 / 3;
+        width: 250%;
+        left: -100%;
+    }
 
-.shape-blue--top-right {
-    grid-area: 1 / 5 / 2 / 9;
-    right: -25%;
-    width: 150%;
-}
+    .shape-blue--top-right {
+        grid-area: 1 / 5 / 2 / 9;
+        right: -25%;
+        width: 150%;
+    }
 
-.shape-yellow--bottom-left {
-    grid-area: 4 / 1 / 4 / 4;
-    left: -110%;
-    width: 220%;
-}
+    .shape-yellow--bottom-left {
+        grid-area: 4 / 1 / 4 / 4;
+        left: -110%;
+        width: 220%;
+    }
 
-.shape-pink--bottom-right {
-    grid-area: 4 / 6 / 4 / 9;
-    right: -10%;
-    width: 220%;
-}
+    .shape-pink--bottom-right {
+        grid-area: 4 / 6 / 4 / 9;
+        right: -10%;
+        width: 220%;
+    }
 
-.aiga-heading {
-    grid-area: 1 / 4 / 2 / 7;
-    width: 110%;
-    justify-self: center;
-    align-self: end;
-    margin-bottom: 5px;
-}
+    .aiga-heading {
+        grid-area: 1 / 4 / 2 / 7;
+        width: 110%;
+        justify-self: center;
+        align-self: end;
+        margin-bottom: 5px;
+    }
 
-.logo-heading {
-    grid-area: 2 / 2 / 3 / 8;
-    align-self: end;
-}
+    .logo-heading {
+        width: 100%;
+        grid-area: 2 / 2 / 3 / 8;
+        align-self: end;
+    }
 
-.mission-text {
-    grid-area: 3 / 1 / 3 / 9;
-    padding: 0 25px;
-    text-align: center;
-    align-self: start;
-    margin-top: -20px;
-    width: 38ch;
-}
+    .mission-text {
+        grid-area: 3 / 1 / 3 / 9;
+        padding: 0 25px;
+        text-align: center;
+        align-self: start;
+        margin-top: -20px;
+        width: 38ch;
+    }
 
-.mission-text--blob {
-    display: none;
-    grid-area: 3 / 2 / 3 / 8;
-    width: 620px;
-}
+    .mission-text--blob {
+        display: none;
+        grid-area: 3 / 2 / 3 / 8;
+        width: 620px;
+    }
 
-.date-heading {
-    grid-area: 4 / 1 / 5 / 9;
-    padding-left: 25px;
-    margin-bottom: 5%;
-    text-shadow: 1px 1px 1px rgb(254, 249, 226, .8); 
-}
+    .date-heading {
+        grid-area: 4 / 1 / 5 / 9;
+        padding-left: 25px;
+        margin-bottom: 5%;
+        text-shadow: 1px 1px 1px rgb(254, 249, 226, .8);
+    }
 
-.time-venue-header {
-    grid-area: 4 / 3 / 5 / 8;
-    width: 80%; 
-    margin-top: 12%;
-    margin-left: -10%;
-    text-shadow: 1px 1px 1px rgb(254, 249, 226, .8); 
-}
+    .time-venue-header {
+        grid-area: 4 / 3 / 5 / 8;
+        width: 80%;
+        margin-top: 12%;
+        margin-left: -10%;
+        text-shadow: 1px 1px 1px rgb(254, 249, 226, .8);
+    }
 }
 
 /* === About Section === */
@@ -681,6 +750,7 @@ main {
     color: var(--backgroundColor);
     font-weight: 500;
     font-size: 1.1em;
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
     letter-spacing: .025em;
     line-height: 1.5em;
     width: 75ch;
@@ -732,13 +802,13 @@ main {
 }
 
 .about--topics-list li::before {
-        content: '';
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        background-image: url(../assets/cross-yellow.svg);
-        background-repeat: no-repeat;
-        padding-right: 1.1em;
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../assets/cross-yellow.svg);
+    background-repeat: no-repeat;
+    padding-right: 1.1em;
 }
 
 .about--topics-section h3 {
@@ -759,7 +829,7 @@ main {
 }
 
 .about--image2 {
-    grid-area: 4 / 8 / 5 / 12; 
+    grid-area: 4 / 8 / 5 / 12;
     justify-self: end;
 }
 
@@ -772,13 +842,13 @@ main {
     .about-section h2 {
         width: 14ch;
         margin-top: 1em;
-        text-align: ;
+        text-align: left;
     }
 
     .about-section p {
         width: auto;
         font-size: 15px;
-        text-align: ;
+        text-align: left;
         line-height: 1.6em;
         grid-column-end: 13;
         padding-right: 1em;
@@ -857,6 +927,7 @@ main {
 
 .speakers--grid-card-headshot img {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -879,7 +950,7 @@ main {
 
 .speakers--grid-card-headshot::after {
     background-image: url(../assets/shape-yellow-bottom-left.svg);
-    top: 85%;
+    top: 88%;
     left: 85%;
 }
 
@@ -915,6 +986,7 @@ main {
 .speakers--grid-info li {
     margin: 0;
     margin-bottom: .8em;
+    font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .speakers--grid-info li::before {
@@ -935,7 +1007,8 @@ main {
 }
 
 .speakers--grid-social {
-    grid-area: 3 / 2 / 4 / 4;
+    /* grid-area: 3 / 2 / 4 / 4; */
+    grid-area: 3 / 2 / 4 / 6;
     align-self: start;
 }
 
@@ -955,12 +1028,14 @@ main {
 }
 
 .speakers--grid-bio-btn {
-    grid-area: 3 / 4 / 4 / 6;
+    /* grid-area: 3 / 4 / 4 / 6; */
     align-self: start;
     color: var(--color1);
     border-color: var(--color1);
     padding: 5px 10px;
-    left: -1em;
+    /* left: -1em; */
+    left: 1em;
+    top: -.5em;
 }
 
 .speakers--grid-bio-btn:hover {
@@ -970,7 +1045,8 @@ main {
 
 @media (max-width: 768px) {
     .speakers--grid {
-        margin: 5em 2em 12em;
+        /* margin: 5em 2em 12em; */
+        margin: 5em 2em 5em;
         gap: 100px 0;
     }
 
@@ -983,30 +1059,30 @@ main {
     .speakers--grid-card-headshot {
         grid-area: 1 / 1 / 2 / 3;
         width: 50%;
-        height: auto;
+        height: 100%;
     }
-    
+
     .speakers--grid-name {
         grid-area: 2 / 1 / 3 / 3;
         align-self: center;
         justify-self: start;
         margin-top: .25em;
     }
-    
+
     .speakers--grid-info {
         grid-area: 3 / 1 / 4 / 3;
         margin: 0;
         align-self: start;
         font-size: 20px;
     }
-    
+
     .speakers--grid-social {
-        grid-area: 4 / 1 / 5  / 3;
+        grid-area: 4 / 1 / 5 / 3;
         align-self: start;
     }
-    
+
     .speakers--grid-bio-btn {
-        grid-area: 5 / 1 / 6  / 2;
+        grid-area: 5 / 1 / 6 / 2;
         align-self: start;
         color: var(--color1);
         border-color: var(--color1);
@@ -1017,13 +1093,93 @@ main {
     }
 }
 
+/* === Agenda Section */
+.agenda--section {
+    margin: 1em 8em 15em;
+}
+
+.agenda--special-heading {
+    color: var(--color3);
+    margin: .75em 0 .75em 0;
+}
+
+.agenda-coming-soon {
+    width: 100%;
+    border: solid 4px var(--mainColor);
+    padding: 2em 2em;
+    text-align: center;
+}
+
+.agenda-coming-soon-heading {
+    color: var(--mainColor);
+    font-size: 3em;
+    font-size: calc(26px + (62 - 26) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 800;
+    margin: .25em auto;
+}
+
+.agenda-coming-soon-link {
+    font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 600;
+    color: var(--color4);
+}
+
+.agenda-coming-soon::before,
+.agenda-coming-soon::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.agenda-coming-soon::before {
+    background-image: url(../assets/shape-blue-top-right.svg);
+    top: -15%;
+    left: -4%;
+}
+
+.agenda-coming-soon::after {
+    background-image: url(../assets/shape-purple-top-left.svg);
+    top: 80%;
+    left: 96%;
+}
+
+@media (max-width: 768px) {
+    .agenda--section {
+        margin: 1em 2em 10em;
+    }
+
+    .agenda-coming-soon {
+        padding: 3em 1em;
+    }
+
+    .agenda-coming-soon::before,
+    .agenda-coming-soon::after {
+        width: 75px;
+        height: 75px;
+    }
+
+    .agenda-coming-soon::before {
+        top: -12%;
+        left: -4%;
+    }
+
+    .agenda-coming-soon::after {
+        top: 80%;
+        left: 90%;
+    }
+}
+
 /* === Sponsor Section */
 .sponsors--section {
     margin: 1em 8em 15em;
 }
 
 .sponsors--special-heading {
-    color: var(--color3);
+    color: var(--color1);
     margin: .75em 0 .75em 0;
 }
 
@@ -1049,7 +1205,7 @@ main {
 }
 
 
-.become-sponsor  {
+.become-sponsor {
     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
     border: solid 2.5px var(--mainColor);
     color: var(--mainColor);
@@ -1112,7 +1268,7 @@ main {
 
 /* === Footer === */
 .footer {
-    background:var(--mainColor);
+    background: var(--mainColor);
     color: var(--backgroundColor);
     text-align: center;
     border-top: solid 5px var(--color1);
@@ -1167,6 +1323,17 @@ main {
     margin: 2em 0 1em;
 }
 
+.somos-logo--footer {
+    margin: 0 auto 1em;
+    transform-origin: center;
+    transition: ease-in-out 1s .2s;
+}
+
+.somos-logo--footer:hover {
+    transform: rotate(180deg);
+    transition: ease-in-out 1s .2s;
+}
+
 .footer--social-icons li {
     display: inline-block;
     margin: 0 .5em;
@@ -1184,7 +1351,7 @@ main {
 }
 
 .copyright-credits {
-    grid-area: 3 / 2 / 4 / 12;
+    grid-area: 3 / 1 / 4 / 13;
     justify-self: center;
     font-size: 14px;
     font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (2000 - 320)));
@@ -1211,27 +1378,32 @@ main {
 
 @media (max-width: 768px) {
     .footer {
-        padding-bottom: 80px;;
+        padding-bottom: 150px;
+        ;
     }
 
     .footer--image1 {
         grid-area: 1 / 2 / 2 / 7;
     }
-    
+
     .footer--image2 {
         grid-area: 1 / 7 / 2 / 12;
     }
-    
+
     .footer--image1,
     .footer--image2 {
         margin-top: -5em;
     }
-    
+
     .footer .buy-tickets--buttons {
         grid-area: 1 / 1 / 2 / 13;
         display: block;
         justify-self: center;
         align-self: start;
         margin-top: 3em;
+    }
+
+    .somos-logo--footer {
+        display: none;
     }
 }

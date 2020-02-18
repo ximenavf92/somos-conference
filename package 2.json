@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/ximenavf92/somos-conference#readme",
   "dependencies": {
+    "netlify-cli": "^2.32.0",
     "normalize.css": "^8.0.1"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
   }
 }
