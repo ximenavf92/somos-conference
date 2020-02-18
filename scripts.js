@@ -1,17 +1,39 @@
-HTML CSS JSResult
-EDIT ON
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+console.warn('¡Hola! Curious? Here is the public repo: https://github.com/ximenavf92/somos-conference/');
+console.log('Built with ❤ [https://ximenavf.com/]');
 
-// We listen to the resize event
-window.addEventListener('resize', () => {
-  // We execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+// The debounce function receives our function as a parameter
+const debounce = (fn) => {
 
-
-
-Resources1×0.5×0.25×Rerun
+    // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    let frame;
+  
+    // The debounce function returns a new function that can receive a variable number of arguments
+    return (...params) => {
+      
+      // If the frame variable has been defined, clear it now, and queue for next frame
+      if (frame) { 
+        cancelAnimationFrame(frame);
+      }
+  
+      // Queue our function call for the next frame
+      frame = requestAnimationFrame(() => {
+        
+        // Call our function and pass any params we received
+        fn(...params);
+      });
+  
+    } 
+  };
+  
+  
+  // Reads out the scroll position and stores it in the data attribute
+  // so we can use it in our stylesheets
+  const storeScroll = () => {
+    document.documentElement.dataset.scroll = window.scrollY;
+  }
+  
+  // Listen for new scroll events, here we debounce our `storeScroll` function
+  document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+  
+  // Update scroll position for first time
+  storeScroll();

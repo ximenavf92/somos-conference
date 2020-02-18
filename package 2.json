@@ -1,0 +1,23 @@
+{
+  "name": "somos2020",
+  "version": "1.0.0",
+  "description": "Conference Website for AIGA's ¡somos! initiative",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ximenavf92/somos-conference.git"
+  },
+  "author": "Ximena Vila Ferral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ximenavf92/somos-conference/issues"
+  },
+  "homepage": "https://github.com/ximenavf92/somos-conference#readme",
+  "dependencies": {
+    "netlify-cli": "^2.32.0",
+    "normalize.css": "^8.0.1"
+  }
+}
