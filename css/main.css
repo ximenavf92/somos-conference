@@ -38,7 +38,8 @@ html {
     position: relative;
 }
 
-/* === Skip To Main Content === */
+/* === A11y === */
+/* Skip To Main Content */
 a.skip-main {
     left: -999px;
     position: absolute;
@@ -49,20 +50,62 @@ a.skip-main {
     z-index: -999;
 }
 
-a.skip-main:focus,
-a.skip-main:active {
+a.skip-main:focus, a.skip-main:active {
     color: #fff;
-    background-color: #000;
+    background-color: var(--color1);
     left: auto;
-    top: auto;
+    top: 10px;
     width: 20%;
     height: auto;
     overflow: auto;
     margin: 10px 35%;
     padding: 10px 5px;
     z-index: 999;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .05em;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 2px var(--color2);
+    outline: none;
 }
 
+
+/* Screen Reader Only */
+.sr-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Focus Styles */
+.main-header :focus {
+    outline: none;
+    border-bottom: solid 4px var(--color3);
+}
+
+.member-tickets:focus {
+    background: var(--color3);
+    border-bottom: none;
+}
+
+.non-member-tickets:focus {
+    background: var(--color4);
+    border-bottom: none;
+}
+
+:focus {
+    outline: none;
+    border-bottom: solid 5px var(--color4);
+    padding-bottom: .5em;
+}
+
+/* === Basics === */
 body {
     width: 100vw;
     overflow-x: hidden;
@@ -84,17 +127,6 @@ li {
 
 p {
     width: 60ch;
-}
-
-/* Screen Reader Only */
-.sr-only {
-    clip: rect(0 0 0 0);
-    clip-path: inset(100%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
 }
 
 /* ====== SCROLLBAR ====== */
