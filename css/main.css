@@ -105,6 +105,20 @@ a.skip-main:focus, a.skip-main:active {
     padding-bottom: .5em;
 }
 
+.copyright-credits :focus {
+    padding-bottom: .1em;
+    border-width: 3px;
+}
+
+.github-repo:focus {
+    border-bottom: solid 3px var(--color4);
+    padding-bottom: .1em;
+}
+
+.somos-logo--footer:focus {
+    padding-bottom: .1em;
+}
+
 /* === Basics === */
 body {
     width: 100vw;
@@ -250,13 +264,15 @@ html::-webkit-scrollbar-track {
 
 .main-nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--backgroundColor);
 }
 
 .main-nav ul li a:hover {
-    color: var(--color4);
+    /* color: var(--color4); */
     font-size: 1.05em;
     transform-origin: center;
+    border-bottom: solid 4px var(--color3);
+    padding-bottom: .5em;
     transition: ease-in-out .3s;
 }
 
@@ -273,6 +289,9 @@ html::-webkit-scrollbar-track {
     transition: ease-in-out 1s .2s;
 }
 
+.main-nav ul .main-nav--logo a:hover {
+    border: none;
+}
 
 .buy-tickets--buttons {
     display: flex;
@@ -299,10 +318,13 @@ html::-webkit-scrollbar-track {
 
 .member-tickets:hover {
     background-color: var(--color3);
+    color: var(--mainColor);
+    font-weight: bold;
 }
 
 .non-member-tickets:hover {
     background-color: var(--color4);
+    font-weight: bold;
 }
 
 @media (max-width: 730px) {
@@ -377,7 +399,7 @@ html::-webkit-scrollbar-track {
 
     .mobile-nav ul li a {
         text-decoration: none;
-        color: #ffffff;
+        color: var(--backgroundColor);
         bottom: .5em;
     }
 
@@ -1072,7 +1094,7 @@ main {
 
 .speakers--grid-bio-btn:hover {
     background-color: var(--color1);
-    color: #ffffff;
+    color: var(--backgroundColor);
 }
 
 @media (max-width: 768px) {
