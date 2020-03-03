@@ -127,6 +127,7 @@ body {
     padding: 0;
     font-family: var(--main-font);
     background: var(--backgroundColor);
+    color: var(--mainColor)
     /* min-height: 2000px; */
 }
 
@@ -235,6 +236,7 @@ html::-webkit-scrollbar-track {
     color: var(--backgroundColor);
     z-index: 50;
     position: fixed;
+    top: 0;
     border-bottom: solid 5px var(--color1);
 }
 
@@ -422,7 +424,7 @@ html::-webkit-scrollbar-track {
 }
 
 /* === Main === */
-main {
+.homepage main {
     top: 70px;
 }
 
@@ -1032,6 +1034,17 @@ main {
     left: 2px;
 }
 
+.speakers--grid-keynote .speakers--grid-name::before {
+    content: ' KEYNOTE ';
+    height: 50px;
+    width: max-content;
+    font-size: .4em;
+    background-color: transparent;
+    font-weight: 600;
+    letter-spacing: .025em;
+    border-bottom: solid 6px var(--color4);
+}
+
 .speakers--grid-info {
     grid-area: 2 / 2 / 3 / 6;
     margin: 0;
@@ -1147,6 +1160,11 @@ main {
     }
 }
 
+/* --- Speakers Bios Page --- */
+.speakers-bios-section {
+    padding-top: 4em;
+}
+
 /* === Agenda Section */
 .agenda--section {
     margin: 1em 8em 15em;
@@ -1224,6 +1242,97 @@ main {
     .agenda-coming-soon::after {
         top: 80%;
         left: 90%;
+    }
+}
+/* --- Full Agenda --- */
+.agenda-grid {
+    border: solid 4px var(--mainColor);
+    padding: 5em 2em;
+    display: grid;
+    grid-template-columns: 0.75fr 3.25fr;
+    grid-template-rows: auto;
+    gap: 50px 60px;
+}
+
+.agenda-grid::before,
+.agenda-grid::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.agenda-grid::before {
+    background-image: url(../assets/shape-blue-top-right.svg);
+    top: -2%;
+    left: -4%;
+}
+
+.agenda-grid::after {
+    background-image: url(../assets/shape-pink-bottom-right.svg);
+    top: 98%;
+    left: 96%;
+}
+
+.agenda-time {
+    justify-self: end;
+}
+
+.agenda-time h3 {
+    margin: .25em auto 0;
+    color: var(--mainColor);
+    font-size: 1.25em;
+}
+
+.agenda-info--talk-title {
+    margin: 0 auto .25em;
+    font-size: 1.75em; 
+    color: var(--color1);
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.agenda-info--speakers {
+    margin: 0 0 .75em;
+    width: max-content;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: var(--mainColor);
+    border-bottom: solid 4px var(--color4);
+    padding-bottom: .1em;
+}
+
+.agenda-info--talk-description {
+    width: 90%;
+    margin: .25em 0 0;
+    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+    line-height: 1.6em;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .agenda-grid::before,
+    .agenda-grid::after {
+        content: none;
+    }
+
+    .agenda-grid {
+        margin-right: 1em;
+        padding: 1em 2em 3em;
+        grid-template-columns: 1fr;
+        gap: 50px 60px;
+    }
+
+    .agenda-time {
+        margin-top: 1.5em;
+        justify-self: start;
+    }
+
+    .agenda-info--talk-description {
+        width: 100%;
     }
 }
 
